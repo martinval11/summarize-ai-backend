@@ -1,13 +1,13 @@
 import { Hono } from "hono";
 import Replicate from "replicate";
-import { cors } from 'hono/cors'
+import { cors } from "hono/cors";
 
 const app = new Hono();
 
-app.use('/api/*', cors())
+app.use("/api/*", cors());
 
 const replicate = new Replicate({
-  auth: "r8_S9pbxWXNsQB0alSjQEpFa5RYQRauNPT0tZZK7",
+  auth: Bun.env.API_KEY,
 });
 
 app.get("/api", (c) => c.text("Welcome to Summarize.ai API"));
