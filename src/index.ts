@@ -18,7 +18,7 @@ app.post("/api/summarize", async (c) => {
     "meta/llama-2-70b-chat:02e509c789964a7ea8736978a43525956ef40397be9033abf9fd2badfe68c9e3",
     {
       input: {
-        prompt: `Please summarize the following article: ${body.url}`,
+        prompt: `Please summarize the following article, if the article is in Spanish, please answer in Spanish, otherwise answer in English: ${body.url}`,
       },
     }
   );
